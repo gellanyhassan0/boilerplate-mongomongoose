@@ -59,10 +59,10 @@ var findOneByFood = function(food, done) {
 };
 
 
-
-const findPersonById = (personId, done) => {
-  done(null /*, data*/);
+var findPersonById = function(personId, done) {
+  Person.findById(personId, done);
 };
+
 
 const findEditThenSave = (personId, done) => {
   const foodToAdd = "hamburger";
