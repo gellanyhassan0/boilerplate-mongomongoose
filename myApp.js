@@ -90,9 +90,15 @@ var findAndUpdate = function(personName, done) {
   );
 };
 
-const removeById = (personId, done) => {
-  done(null /*, data*/);
+
+var removeById = function(personId, done) {
+  Person.findByIdAndRemove(personId).then(
+    res => done(null, res),
+    done
+  );
 };
+
+
 
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
