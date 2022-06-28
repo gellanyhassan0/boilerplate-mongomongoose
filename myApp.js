@@ -99,12 +99,15 @@ var removeById = function(personId, done) {
 };
 
 
-
-const removeManyPeople = (done) => {
-  const nameToRemove = "Mary";
-
-  done(null /*, data*/);
+var removeManyPeople = function(done) {
+  var nameToRemove = "Mary";
+  Person.remove({ name: nameToRemove }).then(
+    res => done(null, res),
+    done
+  );
 };
+
+
 
 const queryChain = (done) => {
   const foodToSearch = "burrito";
